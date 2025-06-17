@@ -12,7 +12,7 @@
             <form wire:submit.prevent="createUser" class="border p-4 rounded shadow bg-white">
                 <div class="mb-3">
                     <label class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" wire:model="nome">
+                    <input type="text" class="form-control" wire:model="name">
                     @error('nome') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
@@ -26,6 +26,11 @@
                     <label class="form-label">Senha</label>
                     <input type="password" class="form-control" wire:model="senha">
                     @error('senha') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+
+                <div>
+                    <label for="is_admin">Administrador</label>
+                    <input type="checkbox" wire:model="is_admin" id="is_admin">
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">Cadastrar</button>

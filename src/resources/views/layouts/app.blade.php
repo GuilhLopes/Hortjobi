@@ -13,6 +13,7 @@
     <nav class="bg-black bg-gradient text-white p-3 vh-100" style="width: 250px;">
         <h4>Menu</h4>
         <ul class="nav flex-column">
+            @if(auth()->user()->is_admin)
             <li class="nav-item">
                 <a class="bg-secondary bg-gradient nav-link text-white mb-2 rounded-2" href="{{ route('lista') }}">Lista de Usuários</a>
             </li>
@@ -20,11 +21,25 @@
                 <a class="bg-secondary bg-gradient nav-link text-white rounded-2" href="{{ route('cadastro') }}">Cadastro de Usuários</a>
             </li>
             <li class="nav-item mt-3">
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logoutadm') }}">
                     @csrf
                     <button class="btn btn-sm btn-outline-light">Sair</button>
                 </form>
             </li>
+            @else
+                <li>
+                    <a class="bg-secondary bg-gradient nav-link text-white mb-2 rounded-2" href="{{ route('frutas') }}">Cadastro de Frutas</a>
+                </li>
+                <li>
+                    <a class="bg-secondary bg-gradient nav-link text-white rounded-2" href="{{ route('lista.frutas') }}">Lista de Frutas</a>
+                </li>
+                <li class="nav-item mt-3">
+                <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-sm btn-outline-light">Sair</button>
+                    </form>
+                </li>
+            @endif
         </ul>
     </nav>
 

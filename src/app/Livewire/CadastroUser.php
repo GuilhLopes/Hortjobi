@@ -11,6 +11,7 @@ class CadastroUser extends Component
     public $name = '';
     public $email = '';
     public $senha = '';
+    public $is_admin = false;
 
     public function createUser()
     {
@@ -23,7 +24,8 @@ class CadastroUser extends Component
         User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => $this->senha
+            'password' => $this->senha,
+            'is_admin' => $this->is_admin,
         ]);
 
         session()->flash('success', 'Usuário cadastrado com sucesso!');
