@@ -68,9 +68,10 @@ jobs:
     - name: Start Laravel server
       run: |
         cd src
-        php artisan serve &
+        nohup php artisan serve --host=127.0.0.1 --port=8000 > laravel.log 2>&1 &
       env:
         DB_HOST: 127.0.0.1
+
 
     - name: Wait for Laravel to boot
       run: sleep 10
