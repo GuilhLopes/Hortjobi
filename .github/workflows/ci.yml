@@ -90,7 +90,7 @@ jobs:
           # Exibir os últimos 20 logs de Laravel
           if [ -f src/storage/logs/laravel.log ]; then
             echo "Exibindo últimos 20 logs de Laravel:"
-            tail -n 20 src/storage/logs/laravel.log
+            head -n 20 src/storage/logs/laravel.log
           else
             echo "Arquivo de logs não encontrado"
           fi
