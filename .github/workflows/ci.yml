@@ -78,7 +78,7 @@ jobs:
         cd src
         php artisan key:generate
         php artisan migrate --force
-        php artisan db:seed || true
+        php artisan db:seed --class=UserSeeder
       env:
         DB_HOST: 127.0.0.1
 
