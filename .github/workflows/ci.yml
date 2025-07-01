@@ -73,8 +73,19 @@ jobs:
         DB_HOST: 127.0.0.1
 
 
-    - name: Wait for Laravel to boot
-      run: sleep 10
+    - name: Esperar Laravel estar pronto
+      run: |
+        for i in {1..15}; do
+          if curl -sSf http://127.0.0.1:8000/login > /dev/null; then
+            echo "Laravel está no ar!"
+            exit 0
+          fi
+          echo "Aguardando Laravel iniciar..."
+          sleep 2
+        done
+        echo "Laravel não respondeu a tempo"
+        exit 1
+
 
     - name: Setup Python + Robot
       uses: actions/setup-python@v4

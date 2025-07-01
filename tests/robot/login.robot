@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Library    String
 
 *** Variables ***
-${URL}             %{URL}
+${URL}             http://127.0.0.1:8000
 ${EMAIL_ADM}       adm@gmail.com
 ${PASS_ADM}        123456
 ${EMAIL}           teste@gmail.com
