@@ -10,18 +10,20 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        // Usuário Admin
+        // Criando um usuário admin
         User::create([
             'name' => 'Admin User',
             'email' => 'adm@gmail.com',
-            'password' => Hash::make('123456'), // Lembre-se de usar Hash::make para senhas
+            'password' => Hash::make('123456'),
+            'is_admin' => true,  // Definindo o usuário como admin
         ]);
 
-        // Usuário Normal
+        // Criando um usuário normal
         User::create([
             'name' => 'Normal User',
             'email' => 'teste@gmail.com',
             'password' => Hash::make('teste24'),
+            'is_admin' => false,  // Definindo o usuário como normal
         ]);
     }
 }
