@@ -25,6 +25,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Limpar as sessoes do Chrome 
+      run: |
+        rm -rf /tmp/chrome-user-data
+
+
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
