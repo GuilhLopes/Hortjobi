@@ -61,14 +61,19 @@ jobs:
         php artisan migrate --force
         php artisan db:seed || true
       env:
-        DB_HOST: mysql
+        DB_HOST: 127.0.0.1
 
     - name: Start Laravel server
       run: |
         cd src
         nohup php artisan serve --host=127.0.0.1 --port=8000 > laravel.log 2>&1 &
       env:
-        DB_HOST: mysql
+        DB_HOST: 127.0.0.1
+
+    - name: Verificar logs do Laravel
+      run: |
+        tail -n 50 src/storage/logs/laravel.log
+
 
 
     - name: Esperar Laravel estar pronto
