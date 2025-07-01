@@ -19,7 +19,11 @@ class Login extends Component
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
             session()->regenerate();
-            return redirect()->route('/');
+
+            // Redireciona para a rota correta com base no tipo de usuário
+            return auth()->user()->is_admin
+                ? redirect('/adm')
+                : redirect('/');
         }
 
         session()->flash('error', 'Credenciais inválidas.');
