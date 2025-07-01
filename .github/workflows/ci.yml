@@ -54,6 +54,13 @@ jobs:
         cd src
         composer install
 
+    - name: Ajustar permissões do diretório de armazenamento
+      run: |
+        cd src
+        sudo chmod -R 775 storage bootstrap/cache
+        sudo chown -R $USER:www-data storage bootstrap/cache
+
+
     - name: Generate key and run migrations
       run: |
         cd src
