@@ -1,261 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.1 (Python 3.12.9 on win32)" generated="2025-06-30T22:09:31.404532" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.1 (Python 3.12.9 on win32)" generated="2025-06-30T22:36:53.786014" rpa="false" schemaversion="5">
 <suite id="s1" name="Login" source="C:\Users\gm589\Desktop\Hortjobi\tests\robot\login.robot">
 <test id="s1-t1" name="Login ADM Com Sucesso" line="16">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-30T22:09:31.616702" level="INFO">${RANDOM} = ckDk9Lt1</msg>
+<msg time="2025-06-30T22:36:54.040894" level="INFO">${RANDOM} = KUduDRgh</msg>
 <var>${RANDOM}</var>
 <arg>8</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-30T22:09:31.616702" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:54.039382" elapsed="0.001512"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-06-30T22:09:31.617710" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002055EA236E0&gt;</msg>
+<msg time="2025-06-30T22:36:54.040894" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000023800D033B0&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-06-30T22:09:31.616702" elapsed="0.001008"/>
+<status status="PASS" start="2025-06-30T22:36:54.040894" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-30T22:09:31.617710" level="INFO">${user_dir} = --user-data-dir=C:\Users\gm589\AppData\Local\Temp/chrome-profile-ckDk9Lt1</msg>
+<msg time="2025-06-30T22:36:54.041913" level="INFO">${user_dir} = --user-data-dir=C:\Users\gm589\AppData\Local\Temp/chrome-profile-KUduDRgh</msg>
 <var>${user_dir}</var>
 <arg>--user-data-dir=${TEMPDIR}/chrome-profile-${RANDOM}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-30T22:09:31.617710" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:54.040894" elapsed="0.001019"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>${user_dir}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-30T22:09:31.617710" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:54.041913" elapsed="0.000000"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:31.617710" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-06-30T22:36:54.041913" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-06-30T22:09:31.617710" elapsed="1.138624"/>
+<status status="PASS" start="2025-06-30T22:36:54.041913" elapsed="1.043453"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:32.756334" level="INFO">Opening url 'http://localhost:8000/login'</msg>
+<msg time="2025-06-30T22:36:55.085366" level="FAIL">Variable '${URL}' not found.</msg>
 <arg>${URL}/login</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-30T22:09:32.756334" elapsed="0.943532"/>
+<status status="FAIL" start="2025-06-30T22:36:55.085366" elapsed="0.000000">Variable '${URL}' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=email</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:33.699866" level="INFO">Typing text 'adm@gmail.com' into text field 'name=email'.</msg>
 <arg>name=email</arg>
 <arg>${EMAIL_ADM}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:33.699866" elapsed="0.056421"/>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:33.756287" level="INFO">Typing text '123456' into text field 'name=password'.</msg>
 <arg>name=password</arg>
 <arg>${PASS_ADM}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:33.756287" elapsed="0.043680"/>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:33.799967" level="INFO">Clicking button 'Entrar'.</msg>
 <arg>Entrar</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:33.799967" elapsed="0.048465"/>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-30T22:09:35.849031" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-30T22:09:33.848432" elapsed="2.000599"/>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
 <kw name="Location Should Contain" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:35.857787" level="INFO">Current location contains 'adm'.</msg>
 <arg>adm</arg>
 <doc>Verifies that the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-06-30T22:09:35.849031" elapsed="0.008756"/>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-30T22:09:35.858707" elapsed="2.227153"/>
+<status status="NOT RUN" start="2025-06-30T22:36:55.086372" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-06-30T22:09:31.615702" elapsed="6.470158"/>
+<status status="FAIL" start="2025-06-30T22:36:54.039382" elapsed="1.047993">Variable '${URL}' not found.</status>
 </test>
-<test id="s1-t2" name="Login Com Sucesso" line="30">
+<test id="s1-t2" name="Login Com Sucesso" line="31">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-30T22:09:38.086867" level="INFO">${RANDOM} = 39I4JbtD</msg>
+<msg time="2025-06-30T22:36:55.088382" level="INFO">${RANDOM} = 2ETQSsF2</msg>
 <var>${RANDOM}</var>
 <arg>8</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-30T22:09:38.086867" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:55.087375" elapsed="0.001007"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-06-30T22:09:38.088287" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002055EA5C500&gt;</msg>
+<msg time="2025-06-30T22:36:55.088382" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000023800D3C050&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-06-30T22:09:38.086867" elapsed="0.001420"/>
+<status status="PASS" start="2025-06-30T22:36:55.088382" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-30T22:09:38.088287" level="INFO">${user_dir} = --user-data-dir=C:\Users\gm589\AppData\Local\Temp/chrome-profile-39I4JbtD</msg>
+<msg time="2025-06-30T22:36:55.089380" level="INFO">${user_dir} = --user-data-dir=C:\Users\gm589\AppData\Local\Temp/chrome-profile-2ETQSsF2</msg>
 <var>${user_dir}</var>
 <arg>--user-data-dir=${TEMPDIR}/chrome-profile-${RANDOM}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-30T22:09:38.088287" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:55.089380" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>${user_dir}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-30T22:09:38.088287" elapsed="0.000991"/>
+<status status="PASS" start="2025-06-30T22:36:55.089380" elapsed="0.000000"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:38.089278" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-06-30T22:36:55.089380" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-06-30T22:09:38.089278" elapsed="1.080834"/>
+<status status="PASS" start="2025-06-30T22:36:55.089380" elapsed="1.068447"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:39.171120" level="INFO">Opening url 'http://localhost:8000/login'</msg>
+<msg time="2025-06-30T22:36:56.158824" level="FAIL">Variable '${URL}' not found.</msg>
 <arg>${URL}/login</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-30T22:09:39.170112" elapsed="0.978119"/>
+<status status="FAIL" start="2025-06-30T22:36:56.157827" elapsed="0.000997">Variable '${URL}' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=email</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-06-30T22:36:56.158824" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:40.149235" level="INFO">Typing text 'teste@gmail.com' into text field 'name=email'.</msg>
 <arg>name=email</arg>
 <arg>${EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:40.148231" elapsed="0.057707"/>
+<status status="NOT RUN" start="2025-06-30T22:36:56.158824" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:40.205938" level="INFO">Typing text 'teste24' into text field 'name=password'.</msg>
 <arg>name=password</arg>
 <arg>${PASS}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:40.205938" elapsed="0.061497"/>
+<status status="NOT RUN" start="2025-06-30T22:36:56.158824" elapsed="0.000000"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:40.267435" level="INFO">Clicking button 'Entrar'.</msg>
 <arg>Entrar</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:40.267435" elapsed="0.075094"/>
+<status status="NOT RUN" start="2025-06-30T22:36:56.159833" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-30T22:09:42.344279" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-30T22:09:40.344036" elapsed="2.000243"/>
+<status status="NOT RUN" start="2025-06-30T22:36:56.159833" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:42.360137" level="INFO">Current page contains text 'Cadastro de Frutas'.</msg>
 <arg>Cadastro de Frutas</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-06-30T22:09:42.344279" elapsed="0.015858"/>
+<status status="NOT RUN" start="2025-06-30T22:36:56.159833" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-30T22:09:42.360137" elapsed="2.136137"/>
+<status status="NOT RUN" start="2025-06-30T22:36:56.159833" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-06-30T22:09:38.086867" elapsed="6.410385"/>
+<status status="FAIL" start="2025-06-30T22:36:55.087375" elapsed="1.072458">Variable '${URL}' not found.</status>
 </test>
-<test id="s1-t3" name="Login com credenciais erradas" line="44">
+<test id="s1-t3" name="Login com credenciais erradas" line="46">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-06-30T22:09:44.499176" level="INFO">${RANDOM} = bFSR2hcl</msg>
+<msg time="2025-06-30T22:36:56.161822" level="INFO">${RANDOM} = 1fzqTW1O</msg>
 <var>${RANDOM}</var>
 <arg>8</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-06-30T22:09:44.499176" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:56.160832" elapsed="0.000990"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-06-30T22:09:44.500175" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002055EA3DEE0&gt;</msg>
+<msg time="2025-06-30T22:36:56.161822" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000023800D03F80&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-06-30T22:09:44.500175" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:56.161822" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-30T22:09:44.500175" level="INFO">${user_dir} = --user-data-dir=C:\Users\gm589\AppData\Local\Temp/chrome-profile-bFSR2hcl</msg>
+<msg time="2025-06-30T22:36:56.161822" level="INFO">${user_dir} = --user-data-dir=C:\Users\gm589\AppData\Local\Temp/chrome-profile-1fzqTW1O</msg>
 <var>${user_dir}</var>
 <arg>--user-data-dir=${TEMPDIR}/chrome-profile-${RANDOM}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-30T22:09:44.500175" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:56.161822" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>${user_dir}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-30T22:09:44.501256" elapsed="0.000000"/>
+<status status="PASS" start="2025-06-30T22:36:56.161822" elapsed="0.000000"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:44.501847" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-06-30T22:36:56.162821" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-06-30T22:09:44.501847" elapsed="1.062019"/>
+<status status="PASS" start="2025-06-30T22:36:56.162821" elapsed="1.049853"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:45.563866" level="INFO">Opening url 'http://localhost:8000/login'</msg>
+<msg time="2025-06-30T22:36:57.214179" level="FAIL">Variable '${URL}' not found.</msg>
 <arg>${URL}/login</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-30T22:09:45.563866" elapsed="0.906095"/>
+<status status="FAIL" start="2025-06-30T22:36:57.212674" elapsed="0.001505">Variable '${URL}' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=email</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-06-30T22:36:57.214692" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:46.469961" level="INFO">Typing text 'errado@gmail.com' into text field 'name=email'.</msg>
 <arg>name=email</arg>
 <arg>${EMAIL_ERRADO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:46.469961" elapsed="0.071894"/>
+<status status="NOT RUN" start="2025-06-30T22:36:57.214692" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:46.542842" level="INFO">Typing text '15366' into text field 'name=password'.</msg>
 <arg>name=password</arg>
 <arg>${PASS_ERRADO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:46.542842" elapsed="0.043315"/>
+<status status="NOT RUN" start="2025-06-30T22:36:57.214692" elapsed="0.000000"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:46.587158" level="INFO">Clicking button 'Entrar'.</msg>
 <arg>Entrar</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-30T22:09:46.586157" elapsed="0.046724"/>
+<status status="NOT RUN" start="2025-06-30T22:36:57.214692" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-30T22:09:48.634318" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-30T22:09:46.633873" elapsed="2.000445"/>
+<status status="NOT RUN" start="2025-06-30T22:36:57.214692" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-06-30T22:09:48.650029" level="INFO">Current page contains text 'Credenciais inválidas.'.</msg>
 <arg>Credenciais inválidas.</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-06-30T22:09:48.635427" elapsed="0.014602"/>
+<status status="NOT RUN" start="2025-06-30T22:36:57.214692" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-30T22:09:48.650029" elapsed="2.210450"/>
+<status status="NOT RUN" start="2025-06-30T22:36:57.215709" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-06-30T22:09:44.498262" elapsed="6.362217"/>
+<status status="FAIL" start="2025-06-30T22:36:56.160832" elapsed="1.054877">Variable '${URL}' not found.</status>
 </test>
-<status status="PASS" start="2025-06-30T22:09:31.405538" elapsed="19.455950"/>
+<status status="FAIL" start="2025-06-30T22:36:53.786979" elapsed="3.428730"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login" id="s1" pass="3" fail="0" skip="0">Login</stat>
+<stat name="Login" id="s1" pass="0" fail="3" skip="0">Login</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-06-30T22:36:54.038383" level="ERROR">Error in file 'C:\Users\gm589\Desktop\Hortjobi\tests\robot\login.robot' on line 6: Setting variable '${URL}' failed: Environment variable '%{URL}' not found.</msg>
 </errors>
 </robot>
