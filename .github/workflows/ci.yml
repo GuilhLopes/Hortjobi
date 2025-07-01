@@ -66,4 +66,4 @@ jobs:
         rfbrowser init
 
     - name: Run Robot Login Test
-      run: robot tests/robot/login_test.robot
+      run: robot tests/robot/login.robot
