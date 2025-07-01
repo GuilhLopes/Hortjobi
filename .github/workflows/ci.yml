@@ -77,12 +77,6 @@ jobs:
       env:
         DB_HOST: 127.0.0.1
 
-    - name: Verificar logs do Laravel
-      run: |
-        tail -n 50 src/storage/logs/laravel.log
-
-
-
     - name: Esperar Laravel estar pronto
       run: |
         for i in {1..15}; do
