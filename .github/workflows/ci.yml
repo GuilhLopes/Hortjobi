@@ -54,7 +54,8 @@ jobs:
     - name: Install PHP dependencies
       run: |
         cd src
-        composer 
+        composer install
+
     - name: Instalar dependências Node.js
       run: |
         cd src
