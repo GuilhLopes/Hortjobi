@@ -20,6 +20,7 @@ Login ADM Com Sucesso
     Call Method   ${options}    add_argument    ${user_dir}
     Create WebDriver    Chrome    options=${options}
     Go To    ${URL}/login
+    Sleep    2s
     Input Text    name=email    ${EMAIL_ADM}
     Input Text    name=password    ${PASS_ADM}
     Click Button    Entrar
@@ -34,6 +35,7 @@ Login Com Sucesso
     Call Method   ${options}    add_argument    ${user_dir}
     Create WebDriver    Chrome    options=${options}
     Go To    ${URL}/login
+    Sleep    2s
     Input Text    name=email    ${EMAIL}
     Input Text    name=password    ${PASS}
     Click Button    Entrar
@@ -48,6 +50,7 @@ Login com credenciais erradas
     Call Method   ${options}    add_argument    ${user_dir}
     Create WebDriver    Chrome    options=${options}
     Go To    ${URL}/login
+    Sleep    2s
     Input Text    name=email    ${EMAIL_ERRADO}
     Input Text    name=password    ${PASS_ERRADO}
     Click Button    Entrar
