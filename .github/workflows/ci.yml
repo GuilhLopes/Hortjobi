@@ -31,9 +31,6 @@ jobs:
         php-version: '8.2'
         extensions: pdo, pdo_mysql, mbstring
 
-    - name: Copy .env
-      run: cp .env.example .env
-
     - name: Install PHP dependencies
       run: composer install
 
@@ -60,6 +57,7 @@ jobs:
       run: |
         pip install robotframework
         pip install robotframework-browser
+        pip install robotframework-seleniumlibrary
         rfbrowser init
 
     - name: Run Robot Login Test
