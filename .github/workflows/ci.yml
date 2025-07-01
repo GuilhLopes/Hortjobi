@@ -32,16 +32,16 @@ jobs:
         extensions: pdo, pdo_mysql, mbstring
 
     - name: Install PHP dependencies
-      run: composer install
+      run: /src/composer install
 
     - name: Generate key and run migrations
       run: |
-        php artisan key:generate
-        php artisan migrate --force
-        php artisan db:seed # se necessário
+        /src/php artisan key:generate
+        /src/php artisan migrate --force
+        /src/php artisan db:seed # se necessário
 
     - name: Start Laravel server
-      run: php artisan serve --host=0.0.0.0 --port=8000 &
+      run: /src/php artisan serve --host=0.0.0.0 --port=8000 &
       env:
         DB_HOST: 127.0.0.1
 
