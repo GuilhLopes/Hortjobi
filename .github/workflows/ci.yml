@@ -28,13 +28,14 @@ jobs:
     - name: Instalar navegador e driver
       run: |
         sudo apt update
-        sudo apt install -y wget unzip xvfb libnss3 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libxrandr2 libasound2 libpangocairo-1.0-0 libcups2 libatk-bridge2.0-0 libgtk-3-0
+        sudo apt install -y wget unzip xvfb libnss3 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libxrandr2 libgtk-3-0 libasound2t64
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome*.deb || sudo apt -f install -y
         wget https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.92/linux64/chromedriver-linux64.zip
         unzip chromedriver-linux64.zip
         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-        chmod +x /usr/local/bin/chromedriver
+        chmod +x /usr/local/bin/chromedriver  
+
 
     - name: Start X virtual framebuffer
       run: |
