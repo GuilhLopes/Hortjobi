@@ -89,6 +89,14 @@ jobs:
         done
         echo "Laravel não respondeu a tempo"
         exit 1
+        
+    - name: Exibir logs de erro do Laravel
+      run: |
+        if [ -f src/storage/logs/laravel.log ]; then
+          cat src/storage/logs/laravel.log
+        else
+          echo "Não foi possível encontrar o arquivo de logs!"
+        fi
 
 
     - name: Setup Python + Robot
