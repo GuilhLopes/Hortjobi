@@ -69,7 +69,7 @@ jobs:
         php artisan migrate --force
         php artisan db:seed || true
       env:
-        DB_HOST: mysql
+        DB_HOST: 127.0.0.1
 
     - name: Start Laravel server
       run: |
