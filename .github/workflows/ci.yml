@@ -54,7 +54,17 @@ jobs:
     - name: Install PHP dependencies
       run: |
         cd src
-        composer install
+        composer 
+    - name: Instalar dependências Node.js
+      run: |
+        cd src
+        npm install
+
+    - name: Gerar assets com Vite
+      run: |
+        cd src
+        npm run build
+
 
     - name: Ajustar permissões do diretório de armazenamento
       run: |
