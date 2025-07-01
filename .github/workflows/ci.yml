@@ -22,6 +22,9 @@ jobs:
           --health-timeout=5s
           --health-retries=3
 
+    env:
+      URL: http://127.0.0.1:8000
+
     steps:
     - uses: actions/checkout@v3
 
@@ -34,13 +37,12 @@ jobs:
         wget https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.92/linux64/chromedriver-linux64.zip
         unzip chromedriver-linux64.zip
         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-        chmod +x /usr/local/bin/chromedriver  
-
+        chmod +x /usr/local/bin/chromedriver
 
     - name: Start X virtual framebuffer
       run: |
         sudo apt install -y xvfb
-        nohup Xvfb :99 -screen 0 1920x1080x24 &
+        nohup Xvfb :99 -screen 0 1920x1080x24 & 
         echo "DISPLAY=:99" >> $GITHUB_ENV
 
     - name: Set up PHP
@@ -60,7 +62,6 @@ jobs:
         sudo chmod -R 775 storage bootstrap/cache
         sudo chown -R $USER:www-data storage bootstrap/cache
 
-
     - name: Generate key and run migrations
       run: |
         cd src
@@ -68,7 +69,7 @@ jobs:
         php artisan migrate --force
         php artisan db:seed || true
       env:
-        DB_HOST: 127.0.0.1
+        DB_HOST: mysql
 
     - name: Start Laravel server
       run: |
@@ -77,27 +78,26 @@ jobs:
       env:
         DB_HOST: 127.0.0.1
 
+    - name: Exibir logs de erro do Laravel
+      run: |
+        if [ -f src/laravel.log ]; then
+          tail -n 20 src/laravel.log
+        else
+          echo "Arquivo de logs não encontrado"
+        fi
+
     - name: Esperar Laravel estar pronto
       run: |
-        for i in {1..15}; do
+        for i in {1..20}; do
           if curl -sSf http://127.0.0.1:8000/login > /dev/null; then
             echo "Laravel está no ar!"
             exit 0
           fi
-          echo "Aguardando Laravel iniciar..."
-          sleep 2
+          echo "Aguardando Laravel iniciar... Tentativa $i"
+          sleep 5
         done
         echo "Laravel não respondeu a tempo"
         exit 1
-        
-    - name: Exibir logs de erro do Laravel
-      run: |
-        if [ -f src/storage/logs/laravel.log ]; then
-          cat src/storage/logs/laravel.log
-        else
-          echo "Não foi possível encontrar o arquivo de logs!"
-        fi
-
 
     - name: Setup Python + Robot
       uses: actions/setup-python@v4
