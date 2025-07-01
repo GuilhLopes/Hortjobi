@@ -1,0 +1,47 @@
+{"level":30,"time":"2025-06-30T23:18:49.866Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Listening on 127.0.0.1:60773"}
+(node:27220) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-06-30T23:18:50.449Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-06-30T23:18:50.570Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Adding browser to stack: chromium, version: 138.0.7204.23"}
+{"level":30,"time":"2025-06-30T23:18:50.571Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-06-30T23:18:50.571Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-06-30T23:18:50.575Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-06-30T23:18:50.576Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-06-30T23:18:50.582Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Changed active context"}
+{"level":30,"time":"2025-06-30T23:18:50.754Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Video path: undefined"}
+{"level":30,"time":"2025-06-30T23:18:50.754Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Changed active page"}
+{"level":30,"time":"2025-06-30T23:18:58.698Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method newPage"}
+{"level":30,"time":"2025-06-30T23:18:58.701Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-06-30T23:18:58.701Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Strict mode is enabled, find Locator with input[name=\"email\"] in page."}
+{"level":30,"time":"2025-06-30T23:19:08.711Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Error of node method  fillText"}
+================= Original suppressed error =================
+locator.fill: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[name="email"]')[22m
+
+    at fillText (C:\Users\gm589\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:11850:17)
+    at async PlaywrightServer.fillText (C:\Users\gm589\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js:13135:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2025-06-30T23:19:08.715Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-06-30T23:19:08.716Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","Take screenshot with options: ":{"path":"C:\\Users\\gm589\\Desktop\\Hortjobi\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-06-30T23:19:08.772Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-06-30T23:19:08.789Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.791Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.792Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.793Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.794Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.795Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.796Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.797Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.798Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Changed active context"}
+{"level":30,"time":"2025-06-30T23:19:08.798Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Changing current active page: page=5a27ed43-d11c-4597-9999-ee321bf87087"}
+{"level":30,"time":"2025-06-30T23:19:08.798Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Changed active page"}
+{"level":30,"time":"2025-06-30T23:19:08.799Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method closeContext"}
+{"level":30,"time":"2025-06-30T23:19:08.803Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Removed page=baed0a3b-3c7b-45ad-895f-6e18644ac35e from context=61403889-0827-4b00-8018-66be0627e9a2 page stack"}
+{"level":30,"time":"2025-06-30T23:19:08.804Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method closeContext"}
+{"level":30,"time":"2025-06-30T23:19:08.808Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.808Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-30T23:19:08.835Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-06-30T23:19:08.875Z","pid":27220,"hostname":"DESKTOP-E5BDUGS","msg":"End of node method closeAllBrowsers"}

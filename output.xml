@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.12.9 on win32)" generated="2025-06-30T21:20:16.236471" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\gm589\Desktop\Hortjobi\tests\robot\login.robot">
+<test id="s1-t1" name="Login ADM Com Sucesso" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:16.456124" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8000/login'.</msg>
+<arg>${URL}/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-30T21:20:16.456124" elapsed="2.280362"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:18.737486" level="INFO">Typing text 'adm@gmail.com' into text field 'name=email'.</msg>
+<arg>name=email</arg>
+<arg>${EMAIL_ADM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:18.737486" elapsed="0.057986"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:18.796480" level="INFO">Typing text '123456' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${PASS_ADM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:18.796480" elapsed="0.049400"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:18.845880" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:18.845880" elapsed="0.061978"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-30T21:20:19.909033" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-30T21:20:18.908859" elapsed="1.000174"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:20.027267" level="INFO">Current location contains 'adm'.</msg>
+<arg>adm</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-06-30T21:20:19.909033" elapsed="0.118234"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-30T21:20:20.027267" elapsed="2.109279"/>
+</kw>
+<status status="PASS" start="2025-06-30T21:20:16.455208" elapsed="5.682259"/>
+</test>
+<test id="s1-t2" name="Login Com Sucesso" line="23">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:22.138974" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8000/login'.</msg>
+<arg>${URL}/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-30T21:20:22.138974" elapsed="2.131111"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:24.271091" level="INFO">Typing text 'teste@gmail.com' into text field 'name=email'.</msg>
+<arg>name=email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:24.270085" elapsed="0.064359"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:24.335441" level="INFO">Typing text 'teste24' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:24.334444" elapsed="0.050663"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:24.385107" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:24.385107" elapsed="0.053490"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-30T21:20:25.439076" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-30T21:20:24.438597" elapsed="1.000479"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:25.587343" level="INFO">Current page contains text 'Cadastro de Frutas'.</msg>
+<arg>Cadastro de Frutas</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-06-30T21:20:25.439076" elapsed="0.148267"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-30T21:20:25.587343" elapsed="2.101551"/>
+</kw>
+<status status="PASS" start="2025-06-30T21:20:22.137467" elapsed="5.552438"/>
+</test>
+<test id="s1-t3" name="Login com credenciais erradas" line="32">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:27.690903" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8000/login'.</msg>
+<arg>${URL}/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-30T21:20:27.690903" elapsed="2.678223"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:30.370218" level="INFO">Typing text 'errado@gmail.com' into text field 'name=email'.</msg>
+<arg>name=email</arg>
+<arg>${EMAIL_ERRADO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:30.370218" elapsed="0.071860"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:30.442078" level="INFO">Typing text '15366' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${PASS_ERRADO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:30.442078" elapsed="0.045028"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:30.487106" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-30T21:20:30.487106" elapsed="0.048936"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-30T21:20:31.537644" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-30T21:20:30.537042" elapsed="1.000602"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-06-30T21:20:31.551002" level="INFO">Current page contains text 'Credenciais inválidas.'.</msg>
+<arg>Credenciais inválidas.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-06-30T21:20:31.538163" elapsed="0.012839"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-30T21:20:31.552027" elapsed="2.151004"/>
+</kw>
+<status status="PASS" start="2025-06-30T21:20:27.689905" elapsed="6.013126"/>
+</test>
+<status status="PASS" start="2025-06-30T21:20:16.236471" elapsed="17.467559"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="3" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -10,13 +10,13 @@
             <form wire:submit.prevent="login" class="bg-white p-4 shadow rounded">
                 <div class="mb-3">
                     <label>Email</label>
-                    <input type="email" class="form-control" wire:model="email">
+                    <input type="email" class="form-control" wire:model="email" name="email">
                     @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="mb-3">
                     <label>Senha</label>
-                    <input type="password" class="form-control" wire:model="password">
+                    <input type="password" class="form-control" wire:model="password" name="password">
                     @error('password') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
