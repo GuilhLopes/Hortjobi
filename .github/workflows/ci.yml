@@ -33,7 +33,7 @@ jobs:
 
     - name: Install PHP dependencies
       run: | 
-        cd /src/
+        cd src
         composer install
 
     - name: Generate key and run migrations
