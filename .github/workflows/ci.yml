@@ -28,14 +28,19 @@ jobs:
     - name: Instalar navegador e driver
       run: |
         sudo apt update
-        sudo apt install -y wget unzip xvfb libnss3
+        sudo apt install -y wget unzip xvfb libnss3 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libxrandr2 libasound2 libpangocairo-1.0-0 libcups2 libatk-bridge2.0-0 libgtk-3-0
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome*.deb || sudo apt -f install -y
-        wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/138.0.7204.92/linux64/chromedriver-linux64.zip
+        wget https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.92/linux64/chromedriver-linux64.zip
         unzip chromedriver-linux64.zip
         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
         chmod +x /usr/local/bin/chromedriver
 
+    - name: Start X virtual framebuffer
+      run: |
+        sudo apt install -y xvfb
+        nohup Xvfb :99 -screen 0 1920x1080x24 &
+        echo "DISPLAY=:99" >> $GITHUB_ENV
 
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
@@ -44,7 +49,7 @@ jobs:
         extensions: pdo, pdo_mysql, mbstring
 
     - name: Install PHP dependencies
-      run: | 
+      run: |
         cd src
         composer install
 
@@ -53,7 +58,9 @@ jobs:
         cd src
         php artisan key:generate
         php artisan migrate --force
-        php artisan db:seed # se necessário
+        php artisan db:seed || true
+      env:
+        DB_HOST: 127.0.0.1
 
     - name: Start Laravel server
       run: |
@@ -70,12 +77,12 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install Robot Framework and Browser Library
+    - name: Install Robot Framework and SeleniumLibrary
       run: |
         pip install robotframework
-        pip install robotframework-browser
         pip install robotframework-seleniumlibrary
-        rfbrowser init
 
     - name: Run Robot Login Test
       run: robot tests/robot/login.robot
+      env:
+        DISPLAY: :99
