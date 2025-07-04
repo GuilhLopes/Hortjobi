@@ -1,7 +1,5 @@
 # Hortjobi - Planejamento de Projeto e Fluxo de Trabalho
 
-Mudança Teste
-
 Este repositório contém o projeto **Hortjobi**, que foi estruturado utilizando boas práticas de versionamento e fluxo de trabalho com Git e GitHub. Abaixo, você encontrará um guia explicando como o planejamento de projeto foi realizado e as ferramentas que foram integradas para otimizar o desenvolvimento e a colaboração no projeto.
 
 ## Planejamento de Projeto no Jira
