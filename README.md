@@ -58,3 +58,7 @@ Um vídeo demonstrando o fluxo completo do processo de commit, push, pull reques
 ---
 
 Para mais informações, consulte o [repositório no GitHub](https://github.com/GuilhLopes/Hortjobi).
+
+O grupo é composto:
+Gabriel Zanoni Herculano
+Guilherme Marques Lopes
